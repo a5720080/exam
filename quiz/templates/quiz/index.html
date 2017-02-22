@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>E-Exam</title>
+</head>
+<body>
+  <h1>e-Exam</h1>
+  <hr>
+  <ul>
+    {% for e in exams %}
+    <li><a href="{% url 'index' %}?id={{ e.id }}">{{ e.name }}</a></li>
+    {% endfor %}
+  </ul>
+  <hr>
+</body>
+</html>

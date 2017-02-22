@@ -1,0 +1,23 @@
+<h1>Your score</h1>
+
+{{score}}/10
+
+<h2>Ans . {{ exam.name }}</h2>
+
+{% for quiz in exam.quiz_set.all %}
+    {{ quiz.quiz_name }}
+
+<ul>
+{% for choice in quiz.choice_set.all %}
+  {% if choice.corrected %}  
+          {{choice.choice_name}}
+    {% endif %}
+{% endfor %}
+</ul>
+{% endfor %}
+
+<form action="{% url 'index'  %}" method="post">
+{% csrf_token %}
+  <input type="submit" value="Back to Exam">
+</from>
+
