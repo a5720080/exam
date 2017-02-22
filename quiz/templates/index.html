@@ -1,8 +1,9 @@
 {% load static %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'quiz/style.css' %}" />
-<h1>Exam </h1>
-<i1>hello</i1>
+<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<h1> Exam  </h1>
+<i1>  </i1>
 {% if exam_pub %}
     <ul>
     {% for exam in exam_pub %}
@@ -10,5 +11,6 @@
     {% endfor %}
     </ul>
 {% else %}
-    <p>No polls are available.</p>
+    <p>No Quiz are available.</p>
+
 {% endif %}

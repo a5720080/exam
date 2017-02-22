@@ -28,6 +28,7 @@ def score(request,exam_id):
             selected_choice = Choice.objects.get(pk=answer)
             if selected_choice.corrected:
                 score = score + 1
+                 
             else:
                 print("quiz"+str(i))
     except:
