@@ -21,6 +21,7 @@ def detail(request, exam_id):
 
 def score(request,exam_id):
     exam = Exam.objects.get(pk=exam_id)
+    question_all = Quiz.objects.count()
     score = 0
     try:
         for i in range (1,exam.quiz_set.count()+1):
@@ -33,6 +34,6 @@ def score(request,exam_id):
                 print("quiz"+str(i))
     except:
         pass
-    context = {'score':score , 'exam':exam  }  
+    context = {'score':score , 'exam':exam ,'question_all':question_all  }  
     return render(request,'score.html',context)    
 
